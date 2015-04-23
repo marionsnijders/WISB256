@@ -1,3 +1,3 @@
-print('Name?')
+print('What is your name?')
 a = input()
 print('Hello ' + a + '!')
