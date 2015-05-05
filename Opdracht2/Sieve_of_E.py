@@ -12,10 +12,10 @@ for i in list(range(2, N)):
     if is_iets_nog_actief[i]:
         count = count + 1
         bestand.write(str(i) + "\n")
-        for j in range(2, N):
-            k = i * j
-            if k < (N + 2):
-                is_iets_nog_actief[k] = False
+        j = 2
+        while j * i < N:
+                is_iets_nog_actief[j * i] = False
+                j += 1
 bestand.close()
 T2 = time.perf_counter()
 
