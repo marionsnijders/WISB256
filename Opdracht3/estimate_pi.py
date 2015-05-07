@@ -13,10 +13,6 @@ count_true = 0
 
 if len(sys.argv) == 4:
     random.seed(sys.argv[3])
-
-if L > 1:
-    print('AssertionError: L should be smaller than 1')
-    sys.exit()
     
 def drop_needle(L):
     x1 = random.random()
@@ -33,5 +29,8 @@ for i in range(0, int(N)):
         
     
 print(count_true, 'hits in', int(N), 'tries')
-pi = 2 * L * N / count_true
+if L > 1:
+    pi = (2 * (L - (math.sqrt(L**2 - 1) + math.asin(1/L))))/ ((count_true/N)-1)
+else:
+    pi = 2 * L * N / count_true
 print('Pi =', pi)
