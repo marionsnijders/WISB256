@@ -3,8 +3,7 @@ import sys
 
 def findRoot(functie, a, b, epsilon):
     if math.fabs(b-a) <= epsilon:
-        print(0.5*(a + b))
-        sys.exit
+        return 0.5*(a + b)
     else:
         m = 0.5*(b + a)
         onder = float(functie(a))
