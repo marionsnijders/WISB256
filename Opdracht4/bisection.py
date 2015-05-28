@@ -1,5 +1,4 @@
 import math
-import sys
 
 def findRoot(functie, a, b, epsilon):
     if math.fabs(b-a) <= epsilon:
@@ -9,6 +8,8 @@ def findRoot(functie, a, b, epsilon):
         onder = float(functie(a))
         midden = float(functie(m))
         if (onder > 0 and midden > 0) or (onder < 0 and midden < 0):
-            findRoot(functie, m, b, epsilon)
+            c = findRoot(functie, m, b, epsilon)
+            return c
         else:
-            findRoot(functie, a, m, epsilon)
+            c = findRoot(functie, a, m, epsilon)
+            return c
